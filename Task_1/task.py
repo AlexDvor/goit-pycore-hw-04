@@ -1,14 +1,15 @@
 
-import math
+from pathlib import Path
 
-def total_salary():
-
+def total_salary(path:str):
+	relative_path= Path(path)
+	absolute_path = relative_path.absolute()
 	some_num =[]
 	total = None
 	average= None
 
 	try:
-		with open("salary.txt","r" ,encoding='utf-8') as file:
+		with open(absolute_path,"r" ,encoding='utf-8') as file:
 			items = file.readlines()
 
 		for item in items:
@@ -22,6 +23,9 @@ def total_salary():
 	except FileNotFoundError:
 		print("File is not exist,try to use other path")
 
+print(total_salary("./salary.txt"))
+
+	
 
 
-print(total_salary())
+
