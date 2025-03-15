@@ -1,9 +1,8 @@
 
 from pathlib import Path
 
-def total_salary(path:str):
-	relative_path= Path(path)
-	absolute_path = relative_path.absolute()
+def total_salary(path:str)->(int):
+	absolute_path= Path(path).absolute()
 	some_num =[]
 
 	try:
