@@ -3,11 +3,11 @@ from pathlib import Path
 from colorama import Fore, Style, init
 from utility import log_directory
 
-def main():
-    
-    init(autoreset=True)  # Ініціалізація colorama для автоматичного скидання кольорів
 
-    # Перевіряємо, чи переданий шлях у аргументах командного рядка
+def main():
+
+    init(autoreset=True)
+
     if len(sys.argv) != 2:
         print(f"{Fore.RED}❌ Помилка: Вкажіть шлях до директорії!{Style.RESET_ALL}")
         print(f"🔹 Використання: python script.py <шлях_до_директорії>")
@@ -15,7 +15,6 @@ def main():
 
     directory_path = Path(sys.argv[1])
 
-    # Перевіряємо, чи існує вказаний шлях
     if not directory_path.exists():
         print(f"{Fore.RED}❌ Помилка: Шлях {directory_path} не існує.{Style.RESET_ALL}")
         return
@@ -26,15 +25,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
- # python main.py "D:\code\Python\goit-pycore-hw-04\Task_3"
- # python main.py "E:\Test\f"
-
-
-
-
-
 
 
 """
